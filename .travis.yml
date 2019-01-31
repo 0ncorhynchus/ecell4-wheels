@@ -15,7 +15,7 @@ install:
   - ./fix_libraries.sh
   - mkdir tmp && cd tmp
   - unzip ../ecell4/python/dist/*.whl
-  - for lib in $(ls "ecell4/.dylibs/lib*.dylib"); do otool -L $lib; done
+  - for lib in $(ls ecell4/.dylibs/lib*.dylib); do otool -L $lib; done
 
 script:
   - pwd
