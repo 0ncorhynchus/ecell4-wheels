@@ -13,6 +13,9 @@ install:
   - delocate-addplat --rm-orig -x 10_9 -x 10_10 python/dist/*.whl
   - cd ..
   - ./fix_libraries.sh
+  - mkdir tmp && cd tmp
+  - unzip ../python/dist/*.whl
+  - for lib in $(ls "ecell4/.dylibs/lib*.dylib"); do otool -L $lib; done
 
 script:
   - pwd
