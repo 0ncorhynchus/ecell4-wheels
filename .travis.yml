@@ -1,6 +1,6 @@
 os: osx
 language: generic
-  
+
 install:
   - brew update && brew upgrade cmake python && brew install gsl hdf5
   - /usr/local/bin/python3 -m pip install -U pip wheel delocate cython
@@ -14,7 +14,7 @@ install:
   - cd ..
   - ./fix_libraries.sh
   - mkdir tmp && cd tmp
-  - unzip ../python/dist/*.whl
+  - unzip ../ecell4/python/dist/*.whl
   - for lib in $(ls "ecell4/.dylibs/lib*.dylib"); do otool -L $lib; done
 
 script:
